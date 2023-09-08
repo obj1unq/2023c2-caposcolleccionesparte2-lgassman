@@ -1,10 +1,21 @@
 import capos.*
+import artefactos.*
+import castillo.*
+
+//test "cargo 2 elementos, no me deja cargar un tercero" {
+//		rolando.recolectar(espada)
+//		rolando.recolectar(libroHechizos)
+//		assert.equals(2, rolando.artefactos().size())
+//		rolando.recolectar(collarDivino)
+//		assert.equals(2, rolando.artefactos().size())
+//}
+
 
 test "encontrar artefactos" {
 	
-	rolando.encontrar(espada)
-	rolando.encontrar(libro)
-	rolando.encontrar(collar)
+	rolando.recolectar(espada)
+	rolando.recolectar(libro)
+	rolando.recolectar(collar)
 
 	assert.equals( #{espada, libro}, rolando.artefactos() )
 	
@@ -12,22 +23,22 @@ test "encontrar artefactos" {
 
 test "castillo" {
 
-	rolando.encontrar(espada)
-	rolando.encontrar(libro)
-	rolando.volverACasa()
- 	rolando.encontrar(collar)
- 	rolando.volverACasa()
+	rolando.recolectar(espada)
+	rolando.recolectar(libro)
+	rolando.irAlCastillo()
+ 	rolando.recolectar(collar)
+ 	rolando.irAlCastillo()
  	
  	assert.that(rolando.artefactos().isEmpty())
- 	assert.equals(#{espada,libro,collar}, castillo.artefactos())
+ 	assert.equals(#{espada,libro,collar}, castilloDePiedra.artefactos())
  	
 }
 
 test "posesiones" {
 	
-	castillo.agregarArtefactos(#{collar, espada})
+	castilloDePiedra.agregarArtefactos(#{collar, espada})
 	
-	rolando.encontrar(armadura)
+	rolando.recolectar(armadura)
 	assert.equals(#{collar, armadura, espada}, rolando.posesiones())
 	assert.that(rolando.posee(armadura))
 	assert.notThat(rolando.posee(libro))
@@ -35,12 +46,12 @@ test "posesiones" {
 }
 
 test "historia" {
-	rolando.encontrar(espada)
-	rolando.encontrar(libro)
-	rolando.encontrar(collar)
-	rolando.volverACasa()
-	rolando.encontrar(armadura)
-	rolando.encontrar(collar)
+	rolando.recolectar(espada)
+	rolando.recolectar(libro)
+	rolando.recolectar(collar)
+	rolando.irAlCastillo()
+	rolando.recolectar(armadura)
+	rolando.recolectar(collar)
 
   assert.equals([espada, libro, collar, armadura, collar], rolando.historia())	
 }

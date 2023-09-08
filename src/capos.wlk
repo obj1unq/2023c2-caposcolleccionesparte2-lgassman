@@ -1,56 +1,37 @@
-object espada{
-		
-}
-
-object collar {
-
-}
-
-object armadura {
-
-}
-
-object libro {
-	
-}
-
-object castillo {
-	
-	const property artefactos = #{}
-		
-	method agregarArtefactos(_artefactos) {
-		artefactos.addAll(_artefactos)		
-	}
-	
-}
-
+import artefactos.*
+import castillo.*
 
 object rolando {
-
+	
 	const property artefactos = #{}
 	var property capacidad = 2
-	const casa = castillo
-	const property historia = []
+	var property castillo = castilloDePiedra
+	const property historialDeArtefactosEncontrados = []
 
-	method encontrar(artefacto) {
-		if(artefactos.size() < capacidad) {
+	method recolectar(artefacto) {
+		if (self.puedeAgregarArtefacto())
 			artefactos.add(artefacto)
-		}
-		historia.add(artefacto)
 	}
-	
-	method volverACasa() {
-		casa.agregarArtefactos(artefactos)
-		artefactos.clear()
-	}	
-	
-	method posesiones() {
-		return self.artefactos() + casa.artefactos()
-	}
-	
-	method posee(artefacto) {
-		return self.posesiones().contains(artefacto)	
-	}
-		
-}
 
+	method puedeAgregarArtefacto() = artefactos.size() < capacidad
+
+	method irAlCastillo() {
+		self.guardarArtefactosEnElCastillo()
+		self.liberarEspacio()
+	}
+	
+	method guardarArtefactosEnElCastillo() {
+		castillo.guardarArtefactos(self)
+	}
+	
+	method liberarEspacio() {
+		artefactos.clear()
+	}
+
+	method todosLosArtefactosRecolectados() {
+		return artefactos.union(self.artefactosDelCastillo())
+	}
+	
+	method artefactosDelCastillo() = castillo.artefactos()
+
+}
