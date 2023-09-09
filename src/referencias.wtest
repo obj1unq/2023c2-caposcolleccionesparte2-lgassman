@@ -2,20 +2,13 @@ import capos.*
 import artefactos.*
 import castillo.*
 
-//test "cargo 2 elementos, no me deja cargar un tercero" {
-//		rolando.recolectar(espada)
-//		rolando.recolectar(libroHechizos)
-//		assert.equals(2, rolando.artefactos().size())
-//		rolando.recolectar(collarDivino)
-//		assert.equals(2, rolando.artefactos().size())
-//}
 
 
 test "encontrar artefactos" {
 	
-	rolando.recolectar(espada)
-	rolando.recolectar(libro)
-	rolando.recolectar(collar)
+	rolando.encontrar(espada)
+	rolando.encontrar(libro)
+	rolando.encontrar(collar)
 
 	assert.equals( #{espada, libro}, rolando.artefactos() )
 	
@@ -23,11 +16,11 @@ test "encontrar artefactos" {
 
 test "castillo" {
 
-	rolando.recolectar(espada)
-	rolando.recolectar(libro)
-	rolando.irAlCastillo()
- 	rolando.recolectar(collar)
- 	rolando.irAlCastillo()
+	rolando.encontrar(espada)
+	rolando.encontrar(libro)
+	rolando.irAlHogar()
+ 	rolando.encontrar(collar)
+ 	rolando.irAlHogar()
  	
  	assert.that(rolando.artefactos().isEmpty())
  	assert.equals(#{espada,libro,collar}, castilloDePiedra.artefactos())
@@ -36,9 +29,9 @@ test "castillo" {
 
 test "posesiones" {
 	
-	castilloDePiedra.agregarArtefactos(#{collar, espada})
+	castilloDePiedra.artefactos(#{collar, espada})
 	
-	rolando.recolectar(armadura)
+	rolando.encontrar(armadura)
 	assert.equals(#{collar, armadura, espada}, rolando.posesiones())
 	assert.that(rolando.posee(armadura))
 	assert.notThat(rolando.posee(libro))
@@ -46,14 +39,14 @@ test "posesiones" {
 }
 
 test "historia" {
-	rolando.recolectar(espada)
-	rolando.recolectar(libro)
-	rolando.recolectar(collar)
-	rolando.irAlCastillo()
-	rolando.recolectar(armadura)
-	rolando.recolectar(collar)
+	rolando.encontrar(espada)
+	rolando.encontrar(libro)
+	rolando.encontrar(collar)
+	rolando.irAlHogar()
+	rolando.encontrar(armadura)
+	rolando.encontrar(collar)
 
-  assert.equals([espada, libro, collar, armadura, collar], rolando.historia())	
+  assert.equals([espada, libro, collar, armadura, collar], rolando.historialDeArtefactosEncontrados())	
 }
 
 

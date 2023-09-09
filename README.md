@@ -83,19 +83,23 @@ Si consultamos la historia de encuentro con los artefactos debería ser:
 Los artefactos son elementos que aportan poder en una batalla al personaje que lo posee
 Pero ojo que cada vez que se combate en una batalla sufren efectos. El poder de pelea
 de rolando, va a depender de un valor base (inicialmente configurable) 
-y de sus artefactos. Tener en cuenta al momento de programar los artefactos que éstos podrían ser
-usados por otros personajes que aún se han introducido.
+y de sus artefactos. Tener en cuenta al momento de programar los artefactos q
+ue éstos podrían serusados por otros personajes que aún se han introducido.
   
 - Espada del destino: Las primera vez que se utiliza aporta la misma cantidad que el poder base del personaje, 
-luego sólo el 50%. 
+luego sólo el 50%.
+ 
 - Collar divino: aporta 3 puntos, pero si el personaje tiene un poder base mayor a 6,
  le suma también un punto por cada batalla en las que se haya usado el collar.
-- Armadura de acero valyrio: Aporta 6 de poder de pelea siempre, el acero valyrio no se gasta con las batallas.
+ 
+- Armadura de acero valyrio: Aporta 6 de poder de pelea siempre, 
+el acero valyrio no se gasta con las batallas.
 
 _Nota_ La regla del libro de hechizos se define más adelante.
 
 El poder de pelea de rolando es la suma su poder base (que inicialmente es 5) más la sumatoria 
 de los poderes de pelea que le aportan los artefactos que tiene encima. 
+
 Cuando ocurre una batalla, se utilizan todos los artefactos que rolando lleva encima 
 y además se incremente en 1 el número base del poder de pelea de rolando. 
 
@@ -151,8 +155,13 @@ y su morada.
 - Astra tiene 14 de poder pelea y vive en la torre de marfil
 
 #### Enemigos vencibles y Moradas Conquistables
-Los enemigos en Erethia que Rolando puede vencer son aquellos que tiene un poder de batalla menor al de rolando
-A su vez las moradas que roland podría conquistar son las moradas de los enemigos a los cuales puede vencer.
+Los enemigos en Erethia que Rolando puede 
+vencer son aquellos que tiene un poder
+ de batalla menor al de rolando
+
+A su vez las moradas que roland podría conquistar
+ son las moradas de los enemigos a los
+  cuales puede vencer.
 
  
 Suponiendo que Rolando tiene 5 de base y capacidad de 3 artefactos. Entre sus artefactos 
@@ -162,16 +171,25 @@ Las moradas conquistables son el palacio de mármol y la torre de marfil.
 
 #### Poderoso
 
-Rolando es poderoso en la tierra de Erethia si está en condiciones de vencer a todos los enemigos.
-En el caso anterior no es poderoso. Pero si ponemos como poder base de rolando 10 entonces sí lo es
+Rolando es poderoso en la tierra de Erethia 
+si está en condiciones de vencer
+ a todos los enemigos.
+ 
+En el caso anterior no es poderoso. 
+Pero si ponemos como poder base de rolando 
+10 entonces sí lo es
 
 #### Artefacto fatal
 
-Saber si rolando tiene encima algún artefacto fatal para luchar contra un enemigo: 
-Un artefacto letal es aquel que le da un poder de pelea superior al poder 
+Saber si rolando tiene encima algún artefacto fatal 
+para luchar contra un enemigo: 
+
+Un artefacto letal es aquel que le da un poder
+ de pelea superior al poder 
 de batalla de su enemigo.
 
-Además de saber si cuenta con un artefacto fatal, se le tiene que poder pedir a rolando
+Además de saber si cuenta con un artefacto 
+fatal, se le tiene que poder pedir a rolando
 un artefacto fatal.
 
 
